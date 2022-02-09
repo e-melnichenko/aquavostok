@@ -1,21 +1,26 @@
 <!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="format-detection" content="telephone=no">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
 
-    <title>{% block title %}Default title{% endblock %}</title>
+  <title>{% block title %}АКВАВОСТОК.РФ{% endblock %}</title>
 
-    {# <link rel="preload" href="./assets/fonts/GothamPro/GothamPro-Regular.woff2" as="font" crossorigin="anonymous" />
-    <link rel="preload" href="./assets/fonts/GothamPro/GothamPro-Medium.woff2" as="font" crossorigin="anonymous" /> #}
+  <link rel="preload" href="./assets/fonts/Golos/Golos-Text_Medium.woff2" as="font" crossorigin="anonymous" />
 
-    <link rel="stylesheet" href="./styles/main.css">
+  {# favicon #}
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/favicons/site.webmanifest">
+  <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  {#  #}
 
-    {# {% if pageName in ['product-page', 'contacts'] %}
-      <script src="https://api-maps.yandex.ru/2.1/?c14d3178-13f2-4774-9ead-d5ee054cf716&lang=ru_RU&" type="text/javascript"></script>
-    {% endif %} #}
+  <link rel="stylesheet" href="./styles/main.css?{{hash}}">
 </head>
 
 <body>
@@ -27,7 +32,7 @@
   {% include 'footer.twig' %}
 </div>
 
-<script src="./js/main.js"></script>
+<script src="./js/main.js?{{hash}}"></script>
 </body>
 </html>
 

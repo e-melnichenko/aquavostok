@@ -18,6 +18,7 @@ const PROD_URL = 'https://site-example.ru';
 const BASE_PATH = isDevelopment ? 'build-dev' : 'build';
 const $ = gulpLoadPlugins();
 const combine = streamCombiner.obj;
+const hash = Math.random().toString(36).substring(7);
 
 // server
 const browserSync = bs.create();
@@ -28,7 +29,9 @@ proxyOptions.route = '/api';
 gulp.task('html', function() {
   return combine(
     gulp.src('src/*.twig'),
-    $.twig(),
+    $.twig({
+      data: {hash}
+    }),
     $.beautifyCode({indent_size: 2}),
     gulp.dest(BASE_PATH)
   ).on('error', $.notify.onError({title: 'html'}))
@@ -52,6 +55,7 @@ gulp.task('assets', function() {
   return combine(
     gulp.src(['src/assets/**/*.*', '!src/assets/svg-icons/**/*.svg'], {since: gulp.lastRun('assets'), base: 'src'}),
     $.changed(BASE_PATH),
+    // $.rename(addHashToImgFolderItems ),
     gulp.dest(BASE_PATH)
   ).on('error', $.notify.onError({title: 'assets'}))
 });
@@ -146,3 +150,14 @@ gulp.task('build', gulp.parallel('styles', 'webpack', 'html', 'assets', 'sprite'
 gulp.task('dev', gulp.series('clean', 'build', gulp.parallel('watch', 'server')));
 
 gulp.task('prod', gulp.series('clean', 'build'));
+
+// const addHashToImgFolderItems = (file) => {
+//   const folderName = file.dirname.split('\\').reverse()[0];
+//   // console.log('folder name', folderName);
+//   const newName = folderName === 'img' ? `${file.basename}-${hash}` : file.basename;
+
+//   return {
+//     ...file,
+//     basename: newName
+//   }
+// }
