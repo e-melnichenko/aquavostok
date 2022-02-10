@@ -1,3 +1,27 @@
 .header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  padding: 2.4rem 0;
+  z-index: 1;
+  @include breakpoint($tablet-width) {
+    padding: 4rem 0;
+  }
 
+  &__logo {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo-img {
+    margin-right: 1rem;
+    width: 3.2rem;
+  }
+
+  &__logo-text {
+    font-weight: 500;
+    color: #fff;
+    font-size: 1.8rem;
+    line-height: 1;
+  }
 }

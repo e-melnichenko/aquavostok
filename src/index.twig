@@ -1,5 +1,70 @@
 {% extends 'templates/base.twig' %}
 
 {% block page %}
-<h1 class="title">title</h1>
+  <h1 class="visually-hidden">АКВАВОСТОК.РФ</h1>
+
+  <section class="hero">
+    <div class="hero__top">
+      <div class="container">
+        <div class="hero__top-wrap">
+          <h2 class="hero__title">Подберите морскую акваторию и&nbsp;занимайтесь марикультурой</h2>
+          <ul class="hero__list">
+            <li class="hero__item">
+              <span class="hero__item-order">1</span>
+              <p class="hero__item-text">Самостоятельно определите границы рыбоводного участка на&nbsp;карте</p>
+            </li>
+            <li class="hero__item">
+              <span class="hero__item-order">2</span>
+              <p class="hero__item-text">Подайте заявку на&nbsp;аренду через систему электронных аукционов</p>
+            </li>
+          </ul>
+          <div class="hero__btns-wrap">
+            <a href="https://aquavostok.ru/map" class="hero__aquavostok-link btn" target="_blank">Подобрать участок</a>
+            <a href="#pupa" class="hero__more-btn btn _transparent">
+              <span>Подробнее</span>
+              <svg><use xlink:href="assets/sprite.svg#arrow-down"></use></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <picture>
+        <source media="(min-width: 768px)" srcset="assets/img/hero_desktop.jpeg?{{hash}} 1x, assets/img/hero_desktop@2x.jpeg?{{hash}} 2x">
+        <img class="hero__bg" src="assets/img/hero_mobile.jpeg?{{hash}}" srcset="assets/img/hero_mobile@2x.jpeg?{{hash}} 2x" alt="Разгрузка рыбы">
+      </picture>
+    </div>
+    <div class="hero__advantages advantages">
+      <div class="container">
+        <ul class="advantages__list">
+
+        {% set list = [
+          {
+            value: '>44',
+            points: 'тыс&nbsp;га',
+            desc: 'разрешенной зоны с&nbsp;учётом всех ограничений'
+          },
+          {
+            value: '>300',
+            points: 'участников',
+            desc: 'уже в&nbsp;пользовании инвесторов'
+          },
+          {
+            value: '80',
+            points: 'дней',
+            desc: 'срок получения рыбоводного участка'
+          },
+        ] %}
+
+        {% for item in list %}
+          <li class="advantages__item">
+            <span class="advantages__item-value">{{ item.value }}</span>
+            <div class="advantages__item-wrap">
+              <p class="advantages__item-points">{{ item.points }}</p>
+              <p class="advantages__item-desc">{{ item.desc }}</p>
+            </div>
+          </li>
+        {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </section>
 {% endblock %}

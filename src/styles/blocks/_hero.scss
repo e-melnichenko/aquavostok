@@ -1,0 +1,166 @@
+.hero {
+  @include breakpoint($desktop-width) {
+    min-height: calc(var(--vh, 1vh) * 100);
+    display: flex;
+    flex-direction: column;
+    padding-top: 12rem;
+  }
+
+  &__top {
+    position: relative;
+    &::after {
+      content: '';
+      @include stretchAbsolute();
+      background: linear-gradient(75.63deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.43) 100%);
+    }
+
+    @include breakpoint($desktop-width) {
+      position: static;
+      flex-grow: 1;
+      display: flex;
+
+      .container {
+        display: flex;
+      }
+    }
+  }
+
+  &__advantages {
+    @include breakpoint($desktop-width) {
+      margin-top: auto;
+    }
+  }
+
+  &__top-wrap {
+    position: relative;
+    padding-top: 9rem;
+    padding-bottom: 4rem;
+    min-height: calc(var(--vh, 1vh) * 100);
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    @include breakpoint($desktop-width) {
+      min-height: 0;
+      max-width: 87.6rem;
+      padding-top: 0;
+    }
+  }
+
+  &__bg {
+    @include stretchAbsolute();
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &__title {
+    margin: 0;
+    margin-top: auto;
+    margin-bottom: 3.2rem;
+    font-weight: 700;
+    font-size: 2.9rem;
+    line-height: 3.6rem;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+
+    @include breakpoint($tablet-width) {
+      font-size: 5.2rem;
+      line-height: 6.4rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__list {
+    margin-top: auto;
+    margin-bottom: 3.2rem;
+    color: #fff;
+
+    @include breakpoint($tablet-width) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__item {
+    margin-bottom: 1.6rem;
+    display: flex;
+    align-items: center;
+
+    @include breakpoint($tablet-width) {
+      max-width: 56.7rem;
+      margin-bottom: 2rem;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__item-order {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-right: 1.6rem;
+    height: 4.4rem;
+    width: 4.4rem;
+    font-size: 1.9rem;
+    line-height: 2.4rem;
+    letter-spacing: -0.01em;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.12);
+
+    @include breakpoint($tablet-width) {
+      width: 5.4rem;
+      height: 5.4rem;
+      margin-right: 2.4rem;
+      font-size: 2.2rem;
+      line-height: 2.8rem;
+    }
+  }
+
+  &__item-text {
+    margin: 0;
+    font-size: 1.9rem;
+    line-height: 2.8rem;
+    color: #fff;
+
+    @include breakpoint($tablet-width) {
+      font-size: 2.2rem;
+      line-height: 3.2rem;
+      letter-spacing: -0.01em;
+    }
+  }
+
+  &__btns-wrap {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include breakpoint($desktop-width) {
+      flex-direction: row;
+    }
+  }
+
+  &__aquavostok-link {
+    margin-bottom: 2.4rem;
+
+    @include breakpoint($desktop-width) {
+      margin-bottom: 0;
+      margin-right: 3.2rem;
+    }
+  }
+
+  &__more-btn {
+    display: flex;
+    align-items: center;
+    svg {
+      width: 1.4rem;
+      height: 1.6rem;
+      margin-left: 2.4rem;
+    }
+  }
+}
