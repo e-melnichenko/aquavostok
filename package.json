@@ -6,7 +6,7 @@
     "start": "cross-env NODE_ENV=development gulp dev",
     "build": "cross-env NODE_ENV=production gulp prod"
   },
-  "author": "",
+  "author": "dinolike030",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.15.0",

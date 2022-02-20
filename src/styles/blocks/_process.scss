@@ -1,0 +1,48 @@
+.process {
+  &__item {
+    display: flex;
+    margin-bottom: 1.6rem;
+    padding-top: 1rem;
+    padding-bottom: 2.6rem;
+    border-bottom: 1px solid #E5E5EB;
+    &:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+  }
+
+  &__road {
+    position: relative;
+    flex-shrink: 0;
+    margin-right: 2.2rem;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 2rem;
+      transform: translate(-50%);
+      height: 100%;
+      width: 2rem;
+      background-image: url("../assets/img/pattern.png");
+      background-repeat: repeat-y;
+      background-color: aquamarine;
+      z-index: -1;
+    }
+  }
+
+  &__road-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.9rem;
+    line-height: 2.4rem;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+    color: #fff;
+    width: 4.8rem;
+    height: 4.8rem;
+    background-color: salmon;
+    border-radius: 50%;
+  }
+}
